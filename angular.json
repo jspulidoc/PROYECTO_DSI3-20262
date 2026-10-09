@@ -1,0 +1,51 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "oaziz": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/oaziz",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [],
+            "optimization": {
+              "scripts": true,
+              "styles": {
+                "minify": true,
+                "inlineCritical": false
+              }
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "oaziz:build"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "88973d06-b8a1-4d0d-a5f9-c8b23b5fef66"
+  }
+}
