@@ -12,7 +12,7 @@ export class AlojamientoService {
     if (!this.datos$) {
       this.datos$ = this.http
         .get<MarketplaceData>('data/marketplace-data.json')
-        .pipe(shareReplay(1)); 
+        .pipe(shareReplay(1)); // se descarga una sola vez
     }
     return this.datos$;
   }
